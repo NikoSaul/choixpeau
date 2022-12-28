@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <h1 id="header"></h1>
+
+    <script type="text/javascript">
+      var clicksPopcorn = 0;
+      var clicksApero = 0;
+      var clicksManette = 0;
+      var clicksPlume = 0;
+      function choixIMG(stringTeam) {
+          if(stringTeam == "popcorn")
+            clicksPopcorn += 1;
+          if(stringTeam == "plume")
+            clicksApero += 1;
+          if(stringTeam == "manette" )
+            clicksLardon += 1;
+          if(stringTeam == "apero" )
+            clicksPlume += 1;
+
+          console.log(stringTeam);
+          document.getElementById("clicks").innerHTML = clicksPopcorn;
+
+          changeImage(); 
+      };
+      function changeImage(){
+        document.getElementById("btnB").onclick  = "choixIMG('manette')";
+       // document.getElementById('btnA').setAttribute('onclick','choixIMG('popcorn')');
+
+        document.getElementById("btnA").innerHTML  = "popcorn";
+        document.getElementById("btnB").innerHTML  = "manette";
+      }
+     
+    </script>
+    <button id="btnA" type="button" onClick="choixIMG('apero')">apero</button>
+    <button id="btnB" type="button" onClick="choixIMG('plume')">plume</button>
+
+    <p>Clicks: <a id="clicks">0</a></p>
+  </body>
+</html>
