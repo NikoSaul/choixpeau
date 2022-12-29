@@ -5,29 +5,25 @@
         .wrapper {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            display: flex;
-            flex-wrap: wrap;
             padding: 0;
-
         }
     
         .ImageA {
             grid-column: 1;
             grid-row: 1;
-            max-width: 50%;
         }
     
         .ImageB {
             grid-column: 2;
             grid-row: 1;
-            max-width: 50%;
         }
 
         .Bulle {
             display: block;
             margin-left: auto;
             margin-right: auto;
-            
+            width: 100%; /* takes the 100 % width of its container (.box div)*/
+            height: 100%; /* takes the 100 % height of its container (.box div)*/
         }
 
         .btn {
