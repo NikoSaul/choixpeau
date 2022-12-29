@@ -1,45 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    
+        .ImageA {
+            grid-column: 1;
+            grid-row: 1;
+        }
+    
+        .ImageB {
+            grid-column: 2;
+            grid-row: 1;
+        }
+    </style>
+    
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+
+    
+    <div class="wrapper">
+        <div class="ImageA"> 
+            <img src="./cha.jpg"/>
+        </div>
+        <div class="ImageB"> 
+            <img src="./bulle0.png"/>
+        </div>
+      </div>
+
   </head>
+
+
   <body>
-    <h1 id="header"></h1>
+    <script>
 
-    <script type="text/javascript">
-      var clicksPopcorn = 0;
-      var clicksApero = 0;
-      var clicksManette = 0;
-      var clicksPlume = 0;
-      function choixIMG(stringTeam) {
-          if(stringTeam == "popcorn")
+        clicksManette = 0;
+        clicksPopcorn = 0;
+        clicksApero = 0;
+        clicksPlume = 0;
+        Derouler = 0;
+
+        function choixIMG(stringTeam) {
+          if(stringTeam == -1) return;
+          if(stringTeam == 0) {
             clicksPopcorn += 1;
-          if(stringTeam == "plume")
+            console.log("clicksPopcorn");
+          }
+          if(stringTeam == 1) 
+          {
             clicksApero += 1;
-          if(stringTeam == "manette" )
-            clicksLardon += 1;
-          if(stringTeam == "apero" )
+            console.log("clicksApero");
+          }
+          if(stringTeam == 2 )
+          {
+            clicksManette += 1;
+            console.log("clicksManette");
+          }
+          if(stringTeam == 3)
+          {
             clicksPlume += 1;
-
+            console.log("clicksPlume");
+          }
           console.log(stringTeam);
-          document.getElementById("clicks").innerHTML = clicksPopcorn;
-
           changeImage(); 
       };
-      function changeImage(){
-        document.getElementById("btnB").onclick  = "choixIMG('manette')";
-       // document.getElementById('btnA').setAttribute('onclick','choixIMG('popcorn')');
 
-        document.getElementById("btnA").innerHTML  = "popcorn";
-        document.getElementById("btnB").innerHTML  = "manette";
+
+      function returnTheMax() {
+        let a = clicksPlume; 
+        let b = clicksPopcorn;
+        let c = clicksApero;
+        let d = clicksManette;
+ 
+        if (a > b) {  
+            if (a > c) {  
+                if (a > d) {  
+                    return "Plume";
+                }  
+                else if(d > a) {  
+                    return "Manette";  
+                }  
+            }  
+        }  
+        else if (b > c) {  
+            if (b > d) {  
+                return "Popcorn";  
+            }  
+            else if (d > b) {  
+                return "Manette";
+            }  
+        }  
+        else if (c > d) {  
+            return "Apero";  
+        }  
+        else if (d > c){  
+            return "Manette"; 
+        }  
+
+        let temp = Math.floor(Math.random() * 2);
+        if(a == b )
+            if(a > c) 
+                return temp ? "Plume" : "Popcorn" ; 
+
+        if(a == c) 
+            if(a > d)
+                return temp ? "Plume" : "Apero"; 
+
+        if(a == d) 
+            if(a > b)
+                return temp ? "Plume" : "Manette" ; 
+
+        if(b == c) 
+            if(b > d)
+                return temp ? "Popcorn" : "Apero" ; 
+
+        if(b == d)
+            if(b > a) 
+                return temp ? "Popcorn" : "Manette" ; 
+
+        if(c == d) 
+            if(c > a) 
+                return temp ? "Apero" : "Manette" ;     
+      }
+    
+      function changeImage(){
+
+        if(Derouler == 0) {
+            document.getElementById('btnA').setAttribute('onclick','choixIMG(2)');
+            document.getElementById('btnB').setAttribute('onclick','choixIMG(3)');
+
+            document.getElementById("btnA").innerHTML  = '<img src="./imgB.png"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgB.png"/>';
+        }
+        if(Derouler == 1) {
+            document.getElementById('btnA').setAttribute('onclick','choixIMG(2)');
+            document.getElementById('btnB').setAttribute('onclick','choixIMG(3)');
+
+            document.getElementById("btnA").innerHTML  = '<img src="./imgB.png"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgB.png"/>';
+        }
+
+        if(Derouler == 2) {
+            document.getElementById('btnA').setAttribute('onclick','choixIMG(2)');
+            document.getElementById('btnB').setAttribute('onclick','choixIMG(3)');
+
+            document.getElementById("btnA").innerHTML  = '<img src="./imgB.png"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgB.png"/>';
+        }
+
+        if(Derouler == 3) {
+            document.getElementById('btnA').setAttribute('onclick','choixIMG(2)');
+            document.getElementById('btnB').setAttribute('onclick','choixIMG(3)');
+
+            document.getElementById("btnA").innerHTML  = '<img src="./imgB.png"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgB.png"/>';
+        }
+        if(Derouler == 4) {
+
+            console.log("------------------------------------------------");
+            console.log("clicksPopcorn");
+            console.log(clicksPopcorn);
+            console.log("clicksManette");
+            console.log(clicksManette);
+            console.log("clicksApero");
+            console.log(clicksApero);
+            console.log("clicksPlume");
+            console.log(clicksPlume);
+
+
+            let returnValue = returnTheMax();
+
+            if(returnValue == "popcorn") {
+                document.getElementById("btnA").innerHTML  = '<img src="./bandeaupopcorn4.png"/>';
+            }
+
+            if(returnValue == "Plume") {
+                document.getElementById("btnA").innerHTML  = '<img src="./Plume_Bandeau.png"/>';
+            }
+
+            if(returnValue == "Manette") {
+                document.getElementById("btnA").innerHTML  = '<img src="./manette_bandeau.png"/>';
+            }
+
+            if(returnValue == "Apero") {
+                document.getElementById("btnA").innerHTML  = '<img src="./bandeauApero4.png"/>';
+            }
+            
+            document.getElementById('btnA').setAttribute('onclick','choixIMG(-1)');
+            document.getElementById('btnB').setAttribute('onclick','choixIMG(-1)');
+        }
+        Derouler++;
       }
      
-    </script>
-    <button id="btnA" type="button" onClick="choixIMG('apero')">apero</button>
-    <button id="btnB" type="button" onClick="choixIMG('plume')">plume</button>
+ </script>
 
-    <p>Clicks: <a id="clicks">0</a></p>
+<div>
+    <div class="wrapper">
+        <div class="ImageA"> 
+            <button id="btnA" type="button" onClick="choixIMG(0)"><img src="./imgA2.png"/></button>
+        </div>
+        <div class="ImageB"> 
+            <button id="btnB" type="button" onClick="choixIMG(1)"><img src="./imgA2.png"/></button>
+        </div>
+    </div>
+</div>
+
   </body>
 </html>
+
