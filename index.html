@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+
+        }
+    
+        .ImageA {
+            grid-column: 1;
+            grid-row: 1;
+            max-width: 50%;
+        }
+    
+        .ImageB {
+            grid-column: 2;
+            grid-row: 1;
+            max-width: 50%;
+        }
+
+        .Bulle {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+
+        .btn {
+            border: none;
+            background: none;
+        }
+    </style>
+    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+
+        clicksManette = 0;
+        clicksPopcorn = 0;
+        clicksApero = 0;
+        clicksPlume = 0;
+        Derouler = 0;
+
+    function choixIMG(stringTeam) {
+          if(stringTeam == -1) return;
+          changeImage(); 
+      };
+
+      function pointsAttribuer(p,a,m,pl)
+      {
+        clicksPopcorn += p;
+        clicksApero += a;
+        clicksManette += m;
+        clicksPlume += pl;
+        changeImage(); 
+      };
+
+      function returnTheMax() {
+        let a = clicksPlume; 
+        let b = clicksPopcorn;
+        let c = clicksApero;
+        let d = clicksManette;
+ 
+        let final = Math.max(a,b,c,d);
+
+        let temp = Math.floor(Math.random() * 2);
+        if(a == b )
+            if(a > c) 
+                return temp ? "Plume" : "Popcorn" ; 
+
+        if(a == c) 
+            if(a > d)
+                return temp ? "Plume" : "Apero"; 
+
+        if(a == d) 
+            if(a > b)
+                return temp ? "Plume" : "Manette" ; 
+
+        if(b == c) 
+            if(b > d)
+                return temp ? "Popcorn" : "Apero" ; 
+
+        if(b == d)
+            if(b > a) 
+                return temp ? "Popcorn" : "Manette" ; 
+
+        if(c == d) 
+            if(c > a) 
+                return temp ? "Apero" : "Manette" ;     
+
+                
+        if(final == a) return "Plume";
+        if(final == b) return "Popcorn";
+        if(final == c) return "Apero";
+        if(final == d) return "Manette";
+      }
+    
+      function changeImage(){
+
+        if(Derouler == 0) {
+            document.getElementById('btnA').setAttribute('onclick','pointsAttribuer(2,0,0,1)');
+            document.getElementById('btnB').setAttribute('onclick','pointsAttribuer(0,2,1,0)');
+
+            document.getElementById("btnA").innerHTML  = '<img src="./imgB1.png"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgB2.png"/>';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle1.png"/>';
+        }
+        if(Derouler == 1) {
+            document.getElementById('btnA').setAttribute('onclick','pointsAttribuer(1,0,0,2)');
+            document.getElementById('btnB').setAttribute('onclick','pointsAttribuer(0,1,2,0)');
+
+            document.getElementById("btnA").innerHTML  = '<img src="./imgC2.png"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgC1.png"/>';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle2.png"/>';
+        }
+
+        if(Derouler == 2) {
+            document.getElementById('btnA').setAttribute('onclick','pointsAttribuer(2,0,0,1)');
+            document.getElementById('btnB').setAttribute('onclick','pointsAttribuer(0,2,1,0)');
+
+            document.getElementById("btnA").innerHTML  = '<img src="./imgD1.png"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgD2.png"/>';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle3.png"/>';
+        }
+
+        if(Derouler == 3) {
+            document.getElementById('btnA').setAttribute('onclick','pointsAttribuer(0,1,0,2)');
+            document.getElementById('btnB').setAttribute('onclick','pointsAttribuer(2,0,1,0)');
+
+            document.getElementById("btnA").innerHTML  = '<img src="./imgE1.png"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgE2.png"/>';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle4.png"/>';
+        }
+
+        if(Derouler == 4) {
+            document.getElementById('btnA').setAttribute('onclick','pointsAttribuer(1,0,0,2)');
+            document.getElementById('btnB').setAttribute('onclick','pointsAttribuer(0,2,1,0)');
+
+            document.getElementById("btnA").innerHTML  = '<img src="./imgG1.png"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgG2.png"/>';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle5.png"/>';
+        }
+
+        if(Derouler == 5) {
+            document.getElementById('btnA').setAttribute('onclick','pointsAttribuer(0,1,2,0)');
+            document.getElementById('btnB').setAttribute('onclick','pointsAttribuer(1,0,0,2)');
+
+            document.getElementById("btnA").innerHTML  = '<img src="./imgH1.png"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgH2.png"/>';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle6.png"/>';
+        }
+
+        if(Derouler == 6) {
+            document.getElementById('btnA').setAttribute('onclick','pointsAttribuer(2,0,0,1)');
+            document.getElementById('btnB').setAttribute('onclick','pointsAttribuer(0,1,2,0)');
+
+            document.getElementById("btnA").innerHTML  = '<img src="./imgI1.png"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgI2.png"/>';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle7.png"/>';
+        }
+
+        if(Derouler == 7) {
+
+            console.log("------------------------------------------------");
+            console.log("clicksPopcorn");
+            console.log(clicksPopcorn);
+            console.log("clicksManette");
+            console.log(clicksManette);
+            console.log("clicksApero");
+            console.log(clicksApero);
+            console.log("clicksPlume");
+            console.log(clicksPlume);
+
+
+            let returnValue = returnTheMax();
+
+            if(returnValue == "Popcorn") {
+                document.getElementById("btnA").innerHTML  = '<img src="./popcorn.png"/>';
+                document.getElementById("btnB").innerHTML  = '';
+            }
+
+            if(returnValue == "Plume") {
+                document.getElementById("btnA").innerHTML  = '<img src="./plume.png"/>';
+                document.getElementById("btnB").innerHTML  = '';
+
+            }
+
+            if(returnValue == "Manette") {
+                document.getElementById("btnA").innerHTML  = '<img src="./manette.png"/>';
+                document.getElementById("btnB").innerHTML  = '';
+
+            }
+
+            if(returnValue == "Apero") {
+                document.getElementById("btnA").innerHTML  = '<img src="./apero.png"/>';
+                document.getElementById("btnB").innerHTML  = '';
+
+            }
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle8.png"/>';
+
+            document.getElementById('btnA').setAttribute('onclick','choixIMG(-1)');
+            document.getElementById('btnB').setAttribute('onclick','choixIMG(-1)');
+        }
+        Derouler++;
+      }
+     
+ </script>
+    <div class="wrapper">
+        <div id="btnBulle" class="Bulle"> 
+            <img src="./bulle0.png"/>
+        </div>
+      </div>
+
+  </head>
+
+
+  <body>
+
+
+<div>
+    <div class="wrapper">
+        <div class="ImageA"> 
+            <button class="btn" id="btnA" type="button" onClick="pointsAttribuer(1,2,0,0)"><img src="./imgA.png"/></button>
+        </div>
+        <div class="ImageB"> 
+            <button class="btn" id="btnB" type="button" onClick="pointsAttribuer(0,1,2,0)"><img src="./imgA2.png"/></button>
+        </div>
+    </div>
+</div>
+
+  </body>
+</html>
+
