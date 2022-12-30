@@ -1,40 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-    <style>
+<html lang="en">    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    .wrapper {
+        max-width: 1520px;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-        .wrapper {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            padding: 0;
-        }
-    
-        .ImageA {
-            grid-column: 1;
-            grid-row: 1;
-        }
-    
-        .ImageB {
-            grid-column: 2;
-            grid-row: 1;
-        }
+    .ImageA {
+        flex: 1;
+        grid-column: 0;
+        max-width:50%; 
+        height:auto;
+    }
 
-        .Bulle {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%; /* takes the 100 % width of its container (.box div)*/
-            height: 100%; /* takes the 100 % height of its container (.box div)*/
-        }
+    .ImageB {
+        flex: 1;
+        grid-column: 2;
+        max-width:50%; 
+        height:auto;
+    }
 
-        .btn {
+    .btn {
             border: none;
             background: none;
         }
-    </style>
-    
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</style>
 
     <script>
 
@@ -104,62 +100,62 @@
             document.getElementById('btnA').setAttribute('onclick','pointsAttribuer(2,0,0,1)');
             document.getElementById('btnB').setAttribute('onclick','pointsAttribuer(0,2,1,0)');
 
-            document.getElementById("btnA").innerHTML  = '<img src="./imgB1.png"/>';
-            document.getElementById("btnB").innerHTML  = '<img src="./imgB2.png"/>';
-            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle1.png"/>';
+            document.getElementById("btnA").innerHTML  = '<img src="./imgB1.png"/ style="max-width:100%;height:auto;">';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgB2.png"/ style="max-width:100%;height:auto;">';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle1.png" style="max-width:100%;height:auto;"/>';
         }
         if(Derouler == 1) {
             document.getElementById('btnA').setAttribute('onclick','pointsAttribuer(1,0,0,2)');
             document.getElementById('btnB').setAttribute('onclick','pointsAttribuer(0,1,2,0)');
 
-            document.getElementById("btnA").innerHTML  = '<img src="./imgC2.png"/>';
-            document.getElementById("btnB").innerHTML  = '<img src="./imgC1.png"/>';
-            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle2.png"/>';
+            document.getElementById("btnA").innerHTML  = '<img src="./imgC2.png" style="max-width:100%;height:auto;"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgC1.png" style="max-width:100%;height:auto;"/>';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle2.png" style="max-width:100%;height:auto;"/>';
         }
 
         if(Derouler == 2) {
             document.getElementById('btnA').setAttribute('onclick','pointsAttribuer(2,0,0,1)');
             document.getElementById('btnB').setAttribute('onclick','pointsAttribuer(0,2,1,0)');
 
-            document.getElementById("btnA").innerHTML  = '<img src="./imgD1.png"/>';
-            document.getElementById("btnB").innerHTML  = '<img src="./imgD2.png"/>';
-            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle3.png"/>';
+            document.getElementById("btnA").innerHTML  = '<img src="./imgD1.png" style="max-width:100%;height:auto;"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgD2.png" style="max-width:100%;height:auto;"/>';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle3.png" style="max-width:100%;height:auto;"/>';
         }
 
         if(Derouler == 3) {
             document.getElementById('btnA').setAttribute('onclick','pointsAttribuer(0,1,0,2)');
             document.getElementById('btnB').setAttribute('onclick','pointsAttribuer(2,0,1,0)');
 
-            document.getElementById("btnA").innerHTML  = '<img src="./imgE1.png"/>';
-            document.getElementById("btnB").innerHTML  = '<img src="./imgE2.png"/>';
-            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle4.png"/>';
+            document.getElementById("btnA").innerHTML  = '<img src="./imgE1.png" style="max-width:100%;height:auto;"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgE2.png" style="max-width:100%;height:auto;"/>';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle4.png " style="max-width:100%;height:auto;"/>';
         }
 
         if(Derouler == 4) {
             document.getElementById('btnA').setAttribute('onclick','pointsAttribuer(1,0,0,2)');
             document.getElementById('btnB').setAttribute('onclick','pointsAttribuer(0,2,1,0)');
 
-            document.getElementById("btnA").innerHTML  = '<img src="./imgG1.png"/>';
-            document.getElementById("btnB").innerHTML  = '<img src="./imgG2.png"/>';
-            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle5.png"/>';
+            document.getElementById("btnA").innerHTML  = '<img src="./imgG1.png" style="max-width:100%;height:auto;"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgG2.png" style="max-width:100%;height:auto;"/>';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle5.png" style="max-width:100%;height:auto;"/>';
         }
 
         if(Derouler == 5) {
             document.getElementById('btnA').setAttribute('onclick','pointsAttribuer(0,1,2,0)');
             document.getElementById('btnB').setAttribute('onclick','pointsAttribuer(1,0,0,2)');
 
-            document.getElementById("btnA").innerHTML  = '<img src="./imgH1.png"/>';
-            document.getElementById("btnB").innerHTML  = '<img src="./imgH2.png"/>';
-            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle6.png"/>';
+            document.getElementById("btnA").innerHTML  = '<img src="./imgH1.png" style="max-width:100%;height:auto;"/>';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgH2.png" style="max-width:100%;height:auto;"/>';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle6.png" style="max-width:100%;height:auto;" />';
         }
 
         if(Derouler == 6) {
             document.getElementById('btnA').setAttribute('onclick','pointsAttribuer(2,0,0,1)');
             document.getElementById('btnB').setAttribute('onclick','pointsAttribuer(0,1,2,0)');
 
-            document.getElementById("btnA").innerHTML  = '<img src="./imgI1.png"/>';
-            document.getElementById("btnB").innerHTML  = '<img src="./imgI2.png"/>';
-            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle7.png"/>';
+            document.getElementById("btnA").innerHTML  = '<img src="./imgI1.png" style="max-width:100%;height:auto;" />';
+            document.getElementById("btnB").innerHTML  = '<img src="./imgI2.png" style="max-width:100%;height:auto;"/>';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle7.png" style="max-width:100%;height:auto;" />';
         }
 
         if(Derouler == 7) {
@@ -178,28 +174,28 @@
             let returnValue = returnTheMax();
 
             if(returnValue == "Popcorn") {
-                document.getElementById("btnA").innerHTML  = '<img src="./popcorn.png"/>';
+                document.getElementById("btnA").innerHTML  = '<img src="./popcorn.png" style="max-width:100%;height:auto;"/>';
                 document.getElementById("btnB").innerHTML  = '';
             }
 
             if(returnValue == "Plume") {
-                document.getElementById("btnA").innerHTML  = '<img src="./plume.png"/>';
+                document.getElementById("btnA").innerHTML  = '<img src="./plume.png" style="max-width:100%;height:auto;"/>';
                 document.getElementById("btnB").innerHTML  = '';
 
             }
 
             if(returnValue == "Manette") {
-                document.getElementById("btnA").innerHTML  = '<img src="./manette.png"/>';
+                document.getElementById("btnA").innerHTML  = '<img src="./manette.png" style="max-width:100%;height:auto;"/>';
                 document.getElementById("btnB").innerHTML  = '';
 
             }
 
             if(returnValue == "Apero") {
-                document.getElementById("btnA").innerHTML  = '<img src="./apero.png"/>';
+                document.getElementById("btnA").innerHTML  = '<img src="./apero.png" style="max-width:100%;height:auto;"/>';
                 document.getElementById("btnB").innerHTML  = '';
 
             }
-            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle8.png"/>';
+            document.getElementById("btnBulle").innerHTML  = '<img src="./bulle8.png" style="max-width:100%;height:auto;"/>';
 
             document.getElementById('btnA').setAttribute('onclick','choixIMG(-1)');
             document.getElementById('btnB').setAttribute('onclick','choixIMG(-1)');
@@ -208,28 +204,27 @@
       }
      
  </script>
+  </head>
+
+  <body>
     <div class="wrapper">
         <div id="btnBulle" class="Bulle"> 
-            <img src="./bulle0.png"/>
+            <img src="./bulle0.png"  style="max-width:100%;height:auto;"/>
         </div>
       </div>
 
-  </head>
-
-
-  <body>
-
-
-<div>
-    <div class="wrapper">
-        <div class="ImageA"> 
-            <button class="btn" id="btnA" type="button" onClick="pointsAttribuer(1,2,0,0)"><img src="./imgA1.png"/></button>
-        </div>
-        <div class="ImageB"> 
-            <button class="btn" id="btnB" type="button" onClick="pointsAttribuer(0,1,2,0)"><img src="./imgA2.png"/></button>
+    <div>
+        <div class="wrapper">
+            <div class="ImageA"> 
+                <button class="btn" id="btnA" type="button" onClick="pointsAttribuer(1,2,0,0)"><img src="./imgA1.png"  style="max-width:100%;height:auto;" /></button>
+            </div>
+            <div class="ImageB"> 
+                <button class="btn" id="btnB" type="button" onClick="pointsAttribuer(0,1,2,0)">
+                    <img src="./imgA2.png"  style="max-width:100%;height:auto;"/>
+                </button>
+            </div>
         </div>
     </div>
-</div>
 
   </body>
 </html>
